@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import PackageCard from './components/PackageCard';
 import QuoteResult from './components/QuoteResult';
+import FAQ from './components/FAQ';
 import './index.css';
 
 function App() {
@@ -223,6 +224,8 @@ function App() {
             <QuoteResult result={quoteResult} />
           </div>
         )}
+
+        <FAQ />
       </main>
 
       {/* Sticky Mobile Contact Bar */}
