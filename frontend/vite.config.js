@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: './', // Use relative paths for assets to avoid MIME type errors on rewrites
+  base: '/bao-gia/', // Absolute proxy path to ensure Vite routes correctly
 })
