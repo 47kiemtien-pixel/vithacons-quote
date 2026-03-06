@@ -90,7 +90,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-900 pb-32">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between">
