@@ -15,7 +15,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
             {pkg.image_url && (
                 <div className="h-40 sm:h-48 w-full overflow-hidden">
                     <img
-                        src={`http://localhost:5173${pkg.image_url}`}
+                        src={`/bao-gia${pkg.image_url}`}
                         alt={pkg.name}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
