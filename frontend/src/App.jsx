@@ -14,7 +14,8 @@ function App() {
   const resultRef = useRef(null);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/packages')
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    fetch(`${apiUrl}/api/packages`)
       .then(res => res.json())
       .then(data => setPackages(data))
       .catch(err => console.error("Error fetching packages:", err));
@@ -35,7 +36,8 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:3001/api/quote', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const res = await fetch(`${apiUrl}/api/quote`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
