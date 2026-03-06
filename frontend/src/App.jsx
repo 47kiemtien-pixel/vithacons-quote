@@ -12,6 +12,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const resultRef = useRef(null);
+  const areaSectionRef = useRef(null);
+  const packageSectionRef = useRef(null);
 
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
@@ -25,10 +27,12 @@ function App() {
     e.preventDefault();
     if (!area || isNaN(area) || area <= 0) {
       setError('Vui lòng nhập diện tích hợp lệ');
+      setTimeout(() => areaSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       return;
     }
     if (!selectedPackage) {
       setError('Vui lòng chọn một gói xây dựng');
+      setTimeout(() => packageSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       return;
     }
 
@@ -90,7 +94,7 @@ function App() {
 
         <form onSubmit={handleCalculate} className="space-y-10 sm:space-y-12">
           {/* Section 1: Inputs */}
-          <section className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100">
+          <section ref={areaSectionRef} className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24 sm:scroll-mt-28">
             <h3 className="text-xl sm:text-2xl font-bold mb-6 flex items-center text-gray-800">
               <span className="bg-blue-100 text-blue-600 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm mr-3">1</span>
               Thông tin công trình
@@ -131,7 +135,7 @@ function App() {
           </section>
 
           {/* Section 2: Packages */}
-          <section>
+          <section ref={packageSectionRef} className="scroll-mt-24 sm:scroll-mt-28">
             <h3 className="text-xl sm:text-2xl font-bold mb-6 flex items-center text-gray-800 px-2">
               <span className="bg-blue-100 text-blue-600 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm mr-3">2</span>
               Chọn gói xây dựng
@@ -179,7 +183,7 @@ function App() {
         </form>
 
         {quoteResult && (
-          <div className="mt-8 sm:mt-12 animate-fade-in-up pb-10" ref={resultRef}>
+          <div className="mt-8 sm:mt-12 animate-fade-in-up pb-10 scroll-mt-24 sm:scroll-mt-28" ref={resultRef}>
             <QuoteResult result={quoteResult} />
           </div>
         )}
