@@ -99,7 +99,17 @@ const db = new sqlite3.Database(dbPath, (err) => {
                 }
             ];
 
-            const stmt = db.prepare(`INSERT OR IGNORE INTO packages (package_code, name, base_price, description, materials, is_multi_story, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)`);
+            const stmt = db.prepare(`
+                INSERT INTO packages (package_code, name, base_price, description, materials, is_multi_story, image_url) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(package_code) DO UPDATE SET 
+                    name=excluded.name, 
+                    base_price=excluded.base_price, 
+                    description=excluded.description, 
+                    materials=excluded.materials, 
+                    is_multi_story=excluded.is_multi_story, 
+                    image_url=excluded.image_url
+            `);
             for (const p of packages) {
                 stmt.run(p.code, p.name, p.base_price, p.description, p.materials, p.is_multi_story, p.image_url);
             }
