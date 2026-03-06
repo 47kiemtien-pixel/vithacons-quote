@@ -43,7 +43,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
                     code: 'STANDARD_L4',
                     name: 'Nhà Cấp 4 - Tiêu Chuẩn',
                     base_price: 5600000,
-                    description: 'Hoàn thiện chìa khóa trao tay.',
+                    description: 'Giải pháp hoàn thiện trọn gói chìa khóa trao tay, mang lại không gian sống tiện nghi, bền bỉ với chi phí hợp lý nhất.',
                     is_multi_story: 0,
                     image_url: '/images/standard.png',
                     materials: JSON.stringify({
@@ -61,7 +61,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
                     code: 'PREMIUM_L4',
                     name: 'Nhà Cấp 4 - Cao Cấp',
                     base_price: 6200000,
-                    description: 'Vật tư cao cấp, hệ kết cấu chắc chắn hơn.',
+                    description: 'Sử dụng hệ vật liệu cao cấp chuẩn Âu, kiến tạo không gian sống đẳng cấp, sang trọng vượt thời gian cùng kết cấu siêu bền.',
                     is_multi_story: 0,
                     image_url: '/images/premium.png',
                     materials: JSON.stringify({
@@ -80,7 +80,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
                     code: 'MULTI_STORY',
                     name: 'Nhà Tấm 2, 3, 4 Tầng...',
                     base_price: 6650000, // Average 6.5 - 6.8
-                    description: 'Kết cấu thép chịu lực cao cho nhà nhiều tầng.',
+                    description: 'Hệ kết cấu thép chịu lực cường độ cao, thiết kế chuyên biệt đảm bảo an toàn tuyệt đối và tối ưu không gian cho công trình nhiều tầng.',
                     is_multi_story: 1,
                     image_url: '/images/multistory.png',
                     materials: JSON.stringify({
