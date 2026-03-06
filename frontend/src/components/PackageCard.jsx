@@ -15,7 +15,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
             {pkg.image_url && (
                 <div className="h-40 sm:h-48 w-full overflow-hidden">
                     <img
-                        src={`https://vithacons-quote-z3ny.vercel.app${pkg.image_url}`}
+                        src={`${import.meta.env.BASE_URL}${pkg.image_url.startsWith('/') ? pkg.image_url.slice(1) : pkg.image_url}`}
                         alt={pkg.name}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
