@@ -78,7 +78,7 @@ function App() {
           resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       } else {
-        setError(data.error || 'Có lỗi xảy ra khi tính báo giá');
+        setError(data.error || 'Có lỗi xảy ra khi tính toán dự toán');
       }
     } catch (err) {
       setError('Lỗi kết nối đến máy chủ');

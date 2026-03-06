@@ -9,7 +9,7 @@ const QuoteResult = ({ result }) => {
     return (
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mt-8 border border-gray-100">
             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 sm:p-8 text-white text-center shadow-inner">
-                <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 text-blue-100">Báo giá ước tính</h2>
+                <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 text-blue-100">Dự toán ước tính</h2>
                 <div className="text-3xl sm:text-5xl font-black tracking-tight mb-2 drop-shadow-md">
                     {formattedPrice}
                 </div>
@@ -60,7 +60,7 @@ const QuoteResult = ({ result }) => {
 
                 <div className="mt-6 sm:mt-8 bg-blue-50 text-blue-800 p-4 rounded-xl text-xs sm:text-sm leading-relaxed border border-blue-100 flex gap-3 sm:gap-4">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <p>Lưu ý: Báo giá mang tính chất tham khảo. Vui lòng liên hệ với chúng tôi để nhận báo giá chính xác nhất sau khi khảo sát thực tế và lên bản vẽ thiết kế chi tiết.</p>
+                    <p>Lưu ý: Kết quả dự toán mang tính chất tham khảo. Vui lòng liên hệ với chúng tôi để có dự toán chính xác nhất sau khi khảo sát thực tế và lên bản vẽ thiết kế chi tiết.</p>
                 </div>
             </div>
         </div>
