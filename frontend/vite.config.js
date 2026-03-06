@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: '/bao-gia/', // Adjust this path depending on what directory you want it served under
 })
