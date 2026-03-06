@@ -51,13 +51,22 @@ app.post('/api/quote', (req, res) => {
             totalArea = totalArea * parseInt(floors, 10);
         }
 
-        const totalPrice = totalArea * packageDetails.base_price;
+        let totalPrice = totalArea * packageDetails.base_price;
+        let formattedPrice = '';
+
+        if (packageDetails.package_code === 'MULTI_STORY') {
+            const minPrice = totalArea * 6500000;
+            const maxPrice = totalArea * 6800000;
+            formattedPrice = `${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(minPrice)} - ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(maxPrice)}`;
+        } else {
+            formattedPrice = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice);
+        }
 
         res.json({
             quote: {
                 totalArea,
                 totalPrice,
-                formattedPrice: new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice),
+                formattedPrice,
                 package: packageDetails
             }
         });

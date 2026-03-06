@@ -26,7 +26,9 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
                 <p className="text-gray-500 text-xs sm:text-sm mb-4 h-10 sm:h-12 leading-relaxed">{pkg.description}</p>
 
                 <div className="mb-4 sm:mb-6 pb-4 border-b border-gray-100">
-                    <span className="text-2xl sm:text-3xl font-black text-blue-600">{formatPrice(pkg.base_price)}</span>
+                    <span className="text-2xl sm:text-3xl font-black text-blue-600">
+                        {pkg.package_code === 'MULTI_STORY' ? '6.500.000đ - 6.800.000đ' : formatPrice(pkg.base_price)}
+                    </span>
                     <span className="text-gray-500 text-xs sm:text-sm"> / m²</span>
                 </div>
 
