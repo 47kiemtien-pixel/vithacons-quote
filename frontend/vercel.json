@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+        {
+            "source": "/bao-gia",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/bao-gia/:match*",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}
