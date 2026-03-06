@@ -93,7 +93,7 @@ function App() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between">
           <div className="flex items-center">
-            <img src="images/logo.png" alt="VITHACONS Logo" className="h-8 sm:h-12 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="VITHACONS Logo" className="h-8 sm:h-12 w-auto object-contain" />
           </div>
 
           <div className="flex gap-2 sm:hidden">
