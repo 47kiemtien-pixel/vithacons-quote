@@ -9,7 +9,7 @@ const Footer = () => {
                 {/* Brand & Mission */}
                 <div className="space-y-6">
                     <div className="flex items-center">
-                        <img src="images/logo.png" alt="Vithacons Logo" className="h-10 sm:h-12 w-auto brightness-0 invert" />
+                        <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Vithacons Logo" className="h-10 sm:h-12 w-auto brightness-0 invert" />
                     </div>
                     <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg">
                         Công Ty TNHH Cơ Khí Xây Dựng Thương Mại Việt Thành (Vithacons) tự hào là đơn vị uy tín trong lĩnh vực thiết kế, thi công nhà thép tiền chế và xây dựng dân dụng. Chúng tôi cam kết chất lượng, tiến độ và giải pháp tối ưu chi phí.
