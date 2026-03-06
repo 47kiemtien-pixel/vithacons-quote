@@ -30,6 +30,10 @@ const FAQItem = ({ question, answer }) => {
 const FAQ = () => {
     const faqData = [
         {
+            question: "Nhà thép tiền chế có bền không? Tuổi thọ được bao lâu?",
+            answer: "Thực tế, độ bền của nhà thép không hề thua kém nhà bê tông truyền thống nếu được thi công đúng kỹ thuật. Tuổi thọ trung bình dao động từ 30 đến 50 năm, thậm chí hơn nếu được bảo dưỡng định kỳ.\n\nYếu tố quyết định chính là chất lượng phôi thép và lớp sơn bảo vệ: Việt Thành sử dụng thép mạ kẽm hoặc sơn Epoxy cao cấp để chống gỉ sét, điều này cực kỳ quan trọng với khí hậu nóng ẩm tại Việt Nam. Một ưu điểm 'thật' nữa là tính linh hoạt: bạn có thể dễ dàng nâng cấp, mở rộng hoặc thậm chí tháo dỡ di dời khi cần thiết - điều mà nhà bê tông cốt thép rất khó thực hiện."
+        },
+        {
             question: "Việt Thành Construction có bao nhiêu năm kinh nghiệm?",
             answer: "Chúng tôi tự hào có trên 10 năm kinh nghiệm chuyên sâu trong lĩnh vực thi công kết cấu thép và xây dựng dân dụng. Công ty được cấp phép ĐKKD từ năm 2017, đảm bảo uy tín và tính pháp lý cao cho mọi công trình."
         },
@@ -44,10 +48,6 @@ const FAQ = () => {
         {
             question: "Tại sao nên chọn Việt Thành thay vì các đơn vị khác?",
             answer: "Khách hàng tin chọn Việt Thành vì:\n- Khảo sát tận nơi hoàn toàn miễn phí.\n- Giám sát thi công trực tiếp 24/24 đảm bảo đúng tiến độ.\n- Cam kết tuyệt đối không phát sinh chi phí ngoài hợp đồng.\n- Đội ngũ kỹ sư giàu kinh nghiệm, tận tâm."
-        },
-        {
-            question: "Nhà thép tiền chế có bền không? Tuổi thọ được bao lâu?",
-            answer: "Nhà thép tiền chế cực kỳ bền bỉ với tuổi thọ có thể đạt trên 50 năm. Nhờ sử dụng thép cường độ cao và công nghệ sơn/mạ chống ăn mòn hiện đại, công trình có khả năng chịu lực vượt trội, chống rung chấn và thích nghi tốt với khí hậu Việt Nam. Việt Thành luôn chú trọng tính toán kết cấu kỹ lưỡng để đảm bảo độ bền tối ưu cho khách hàng."
         },
         {
             question: "Việt Thành nhận thi công ở những khu vực nào?",
