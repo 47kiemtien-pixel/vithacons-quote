@@ -11,6 +11,7 @@ function App() {
   const [quoteResult, setQuoteResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({});
   const resultRef = useRef(null);
   const areaSectionRef = useRef(null);
   const packageSectionRef = useRef(null);
@@ -18,6 +19,7 @@ function App() {
 
   const handleSelectPackage = (pkg) => {
     setSelectedPackage(pkg);
+    setFieldErrors(prev => ({ ...prev, package: null }));
     if (pkg.is_multi_story && (!floors || floors < 2)) {
       setFloors(2);
     }
@@ -33,23 +35,25 @@ function App() {
 
   const handleCalculate = async (e) => {
     e.preventDefault();
+    setFieldErrors({});
+    setError('');
+
     if (!area || isNaN(area) || area <= 0) {
-      setError('Vui lòng nhập diện tích hợp lệ');
+      setFieldErrors({ area: 'Vui lòng nhập diện tích hợp lệ' });
       setTimeout(() => areaSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       return;
     }
     if (!selectedPackage) {
-      setError('Vui lòng chọn một gói xây dựng');
+      setFieldErrors({ package: 'Vui lòng chọn một gói xây dựng' });
       setTimeout(() => packageSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       return;
     }
     if (selectedPackage.is_multi_story && (!floors || isNaN(floors) || floors < 2)) {
-      setError('Vui lòng nhập số tầng (ít nhất là 2 tầng)');
+      setFieldErrors({ floors: 'Vui lòng nhập số tầng (ít nhất là 2 tầng)' });
       setTimeout(() => floorSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
       return;
     }
 
-    setError('');
     setLoading(true);
 
     try {
@@ -132,12 +136,16 @@ function App() {
                     type="number"
                     inputMode="numeric"
                     value={area}
-                    onChange={(e) => setArea(e.target.value)}
+                    onChange={(e) => {
+                      setArea(e.target.value);
+                      if (fieldErrors.area) setFieldErrors(prev => ({ ...prev, area: null }));
+                    }}
                     placeholder="Nhập diện tích"
-                    className="w-full pl-4 pr-12 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500 outline-none transition-all text-lg font-bold"
+                    className={`w-full pl-4 pr-12 py-4 rounded-xl border-2 outline-none transition-all text-lg font-bold ${fieldErrors.area ? 'border-red-400 bg-red-50 focus:border-red-500' : 'border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500'}`}
                   />
                   <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 font-bold">m²</div>
                 </div>
+                {fieldErrors.area && <p className="mt-2 text-sm text-red-600 font-bold animate-fade-in-up">{fieldErrors.area}</p>}
               </div>
 
               {selectedPackage?.is_multi_story && (
@@ -149,11 +157,15 @@ function App() {
                       inputMode="numeric"
                       min="2"
                       value={floors}
-                      onChange={(e) => setFloors(e.target.value)}
-                      className="w-full pl-4 pr-12 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500 outline-none transition-all text-lg font-bold"
+                      onChange={(e) => {
+                        setFloors(e.target.value);
+                        if (fieldErrors.floors) setFieldErrors(prev => ({ ...prev, floors: null }));
+                      }}
+                      className={`w-full pl-4 pr-12 py-4 rounded-xl border-2 outline-none transition-all text-lg font-bold ${fieldErrors.floors ? 'border-red-400 bg-red-50 focus:border-red-500' : 'border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500'}`}
                     />
                     <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 font-bold">tầng</div>
                   </div>
+                  {fieldErrors.floors && <p className="mt-2 text-sm text-red-600 font-bold animate-fade-in-up">{fieldErrors.floors}</p>}
                 </div>
               )}
             </div>
@@ -165,6 +177,13 @@ function App() {
               <span className="bg-blue-100 text-blue-600 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm mr-3">2</span>
               Chọn gói xây dựng
             </h3>
+
+            {fieldErrors.package && (
+              <div className="mb-6 bg-red-50 text-red-600 p-3 rounded-xl border border-red-200 flex items-center text-sm font-bold mx-2 animate-fade-in-up">
+                <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"></path></svg>
+                {fieldErrors.package}
+              </div>
+            )}
 
             {packages.length === 0 ? (
               <div className="text-center py-12 text-gray-500">Đang tải các gói báo giá...</div>
