@@ -131,7 +131,7 @@ function App() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Diện tích xây dựng (m²)</label>
-                <div className="relative">
+                <div className="relative flex items-center">
                   <input
                     type="number"
                     inputMode="numeric"
@@ -141,9 +141,9 @@ function App() {
                       if (fieldErrors.area) setFieldErrors(prev => ({ ...prev, area: null }));
                     }}
                     placeholder="Nhập diện tích"
-                    className={`w-full pl-4 pr-12 py-4 rounded-xl border-2 outline-none transition-all text-lg font-bold ${fieldErrors.area ? 'border-red-400 bg-red-50 focus:border-red-500' : 'border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500'}`}
+                    className={`w-full pl-4 pr-16 py-4 rounded-xl border-2 outline-none transition-all text-lg font-bold ${fieldErrors.area ? 'border-red-400 bg-red-50 focus:border-red-500' : 'border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500'}`}
                   />
-                  <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 font-bold">m²</div>
+                  <div className="absolute right-4 text-gray-400 font-bold pointer-events-none">m²</div>
                 </div>
                 {fieldErrors.area && <p className="mt-2 text-sm text-red-600 font-bold animate-fade-in-up">{fieldErrors.area}</p>}
               </div>
@@ -151,7 +151,7 @@ function App() {
               {selectedPackage?.is_multi_story && (
                 <div className="animate-fade-in-up scroll-mt-24 sm:scroll-mt-28" ref={floorSectionRef}>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Số tầng</label>
-                  <div className="relative">
+                  <div className="relative flex items-center">
                     <input
                       type="number"
                       inputMode="numeric"
@@ -161,9 +161,9 @@ function App() {
                         setFloors(e.target.value);
                         if (fieldErrors.floors) setFieldErrors(prev => ({ ...prev, floors: null }));
                       }}
-                      className={`w-full pl-4 pr-12 py-4 rounded-xl border-2 outline-none transition-all text-lg font-bold ${fieldErrors.floors ? 'border-red-400 bg-red-50 focus:border-red-500' : 'border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500'}`}
+                      className={`w-full pl-4 pr-16 py-4 rounded-xl border-2 outline-none transition-all text-lg font-bold ${fieldErrors.floors ? 'border-red-400 bg-red-50 focus:border-red-500' : 'border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500'}`}
                     />
-                    <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 font-bold">tầng</div>
+                    <div className="absolute right-4 text-gray-400 font-bold pointer-events-none">tầng</div>
                   </div>
                   {fieldErrors.floors && <p className="mt-2 text-sm text-red-600 font-bold animate-fade-in-up">{fieldErrors.floors}</p>}
                 </div>
