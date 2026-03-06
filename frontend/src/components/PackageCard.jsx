@@ -15,7 +15,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
             {pkg.image_url && (
                 <div className="h-40 sm:h-48 w-full overflow-hidden">
                     <img
-                        src={`/bao-gia${pkg.image_url}`}
+                        src={`https://vithacons-quote-z3ny.vercel.app${pkg.image_url}`}
                         alt={pkg.name}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
