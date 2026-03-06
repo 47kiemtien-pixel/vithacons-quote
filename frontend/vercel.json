@@ -1,8 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/bao-gia",
-            "destination": "/index.html"
+            "source": "/bao-gia/(assets|images)/(.*)",
+            "destination": "/$1/$2"
         },
         {
             "source": "/bao-gia/:match*",
