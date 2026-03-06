@@ -14,6 +14,14 @@ function App() {
   const resultRef = useRef(null);
   const areaSectionRef = useRef(null);
   const packageSectionRef = useRef(null);
+  const floorSectionRef = useRef(null);
+
+  const handleSelectPackage = (pkg) => {
+    setSelectedPackage(pkg);
+    if (pkg.is_multi_story && (!floors || floors < 2)) {
+      setFloors(2);
+    }
+  };
 
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
@@ -33,6 +41,11 @@ function App() {
     if (!selectedPackage) {
       setError('Vui lòng chọn một gói xây dựng');
       setTimeout(() => packageSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      return;
+    }
+    if (selectedPackage.is_multi_story && (!floors || isNaN(floors) || floors < 2)) {
+      setError('Vui lòng nhập số tầng (ít nhất là 2 tầng)');
+      setTimeout(() => floorSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
       return;
     }
 
@@ -121,7 +134,7 @@ function App() {
               </div>
 
               {selectedPackage?.is_multi_story && (
-                <div className="animate-fade-in-up">
+                <div className="animate-fade-in-up scroll-mt-24 sm:scroll-mt-28" ref={floorSectionRef}>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Số tầng</label>
                   <div className="relative">
                     <input
@@ -155,7 +168,7 @@ function App() {
                     key={pkg.id}
                     pkg={pkg}
                     isSelected={selectedPackage?.id === pkg.id}
-                    onSelect={setSelectedPackage}
+                    onSelect={handleSelectPackage}
                   />
                 ))}
               </div>
