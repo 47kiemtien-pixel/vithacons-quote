@@ -31,31 +31,31 @@ const FAQ = () => {
     const faqData = [
         {
             question: "Nhà thép tiền chế có bền không? Tuổi thọ được bao lâu?",
-            answer: "Thực tế, độ bền của nhà thép không hề thua kém nhà bê tông truyền thống nếu được thi công đúng kỹ thuật. Tuổi thọ trung bình dao động từ 30 đến 50 năm, thậm chí hơn nếu được bảo dưỡng định kỳ.\n\nYếu tố quyết định chính là chất lượng phôi thép và lớp sơn bảo vệ: Việt Thành sử dụng thép mạ kẽm hoặc sơn Epoxy cao cấp để chống gỉ sét, điều này cực kỳ quan trọng với khí hậu nóng ẩm tại Việt Nam. Một ưu điểm 'thật' nữa là tính linh hoạt: bạn có thể dễ dàng nâng cấp, mở rộng hoặc thậm chí tháo dỡ di dời khi cần thiết - điều mà nhà bê tông cốt thép rất khó thực hiện."
+            answer: "Thực tế, độ bền của nhà thép không hề thua kém nhà bê tông truyền thống nếu được thi công đúng kỹ thuật. Tuổi thọ trung bình dao động từ 30 đến 50 năm, thậm chí hơn nếu được bảo dưỡng định kỳ.\n\nYếu tố quyết định chính là chất lượng phôi thép và lớp sơn bảo vệ: Vithacons sử dụng thép mạ kẽm hoặc sơn Epoxy cao cấp để chống gỉ sét, điều này cực kỳ quan trọng với khí hậu nóng ẩm tại Việt Nam. Một ưu điểm 'thật' nữa là tính linh hoạt: bạn có thể dễ dàng nâng cấp, mở rộng hoặc thậm chí tháo dỡ di dời khi cần thiết - điều mà nhà bê tông cốt thép rất khó thực hiện."
         },
         {
-            question: "Việt Thành Construction có bao nhiêu năm kinh nghiệm?",
+            question: "Vithacons có bao nhiêu năm kinh nghiệm?",
             answer: "Chúng tôi tự hào có trên 10 năm kinh nghiệm chuyên sâu trong lĩnh vực thi công kết cấu thép và xây dựng dân dụng. Công ty được cấp phép ĐKKD từ năm 2017, đảm bảo uy tín và tính pháp lý cao cho mọi công trình."
         },
         {
             question: "Công ty cung cấp những dịch vụ xây dựng nào?",
-            answer: "Việt Thành chuyên cung cấp các giải pháp toàn diện bao gồm:\n- Nhà Thép Tiền Chế (Kho xưởng, showroom, nhà hàng...)\n- Xây Dựng Dân Dụng (Thiết kế & thi công nhà phố, biệt thự)\n- Thiết Kế & Lắp Đặt Thang Máy hiện đại\n- Bảo Dưỡng Cầu Trục định kỳ."
+            answer: "Vithacons chuyên cung cấp các giải pháp toàn diện bao gồm:\n- Nhà Thép Tiền Chế (Kho xưởng, showroom, nhà hàng...)\n- Xây Dựng Dân Dụng (Thiết kế & thi công nhà phố, biệt thự)\n- Thiết Kế & Lắp Đặt Thang Máy hiện đại\n- Bảo Dưỡng Cầu Trục định kỳ."
         },
         {
-            question: "Quy trình làm việc của Việt Thành như thế nào?",
+            question: "Quy trình làm việc của Vithacons như thế nào?",
             answer: "Chúng tôi áp dụng quy trình 6 bước chuyên nghiệp:\n1. Tiếp nhận nhu cầu.\n2. Khảo sát & tư vấn miễn phí.\n3. Báo giá chi tiết, minh bạch.\n4. Ký kết hợp đồng.\n5. Thi công chuyên nghiệp (giám sát 24/24).\n6. Nghiệm thu & bảo hành dài hạn."
         },
         {
-            question: "Tại sao nên chọn Việt Thành thay vì các đơn vị khác?",
-            answer: "Khách hàng tin chọn Việt Thành vì:\n- Khảo sát tận nơi hoàn toàn miễn phí.\n- Giám sát thi công trực tiếp 24/24 đảm bảo đúng tiến độ.\n- Cam kết tuyệt đối không phát sinh chi phí ngoài hợp đồng.\n- Đội ngũ kỹ sư giàu kinh nghiệm, tận tâm."
+            question: "Tại sao nên chọn Vithacons thay vì các đơn vị khác?",
+            answer: "Khách hàng tin chọn Vithacons vì:\n- Khảo sát tận nơi hoàn toàn miễn phí.\n- Giám sát thi công trực tiếp 24/24 đảm bảo đúng tiến độ.\n- Cam kết tuyệt đối không phát sinh chi phí ngoài hợp đồng.\n- Đội ngũ kỹ sư giàu kinh nghiệm, tận tâm."
         },
         {
-            question: "Việt Thành nhận thi công ở những khu vực nào?",
+            question: "Vithacons nhận thi công ở những khu vực nào?",
             answer: "Chúng tôi nhận mọi dự án tại:\n- Đắk Lắk (TP. Buôn Ma Thuột và tất cả các huyện).\n- Gia Lai, Lâm Đồng.\n- Khu vực Miền Nam: TP. Hồ Chí Minh, Bình Dương, Đồng Nai.\nĐối với các tỉnh xa, chúng tôi ưu tiên các dự án quy mô lớn như nhà xưởng, showroom để đảm bảo hiệu quả vận hành tối ưu cho khách hàng."
         },
         {
             question: "Tôi có được tư vấn và khảo sát miễn phí không?",
-            answer: "Chắc chắn rồi! Ngay khi tiếp nhận thông tin, Việt Thành sẽ cử kỹ sư đến khảo sát thực tế và tư vấn giải pháp tối ưu nhất cho bạn mà không thu bất kỳ khoản phí nào."
+            answer: "Chắc chắn rồi! Ngay khi tiếp nhận thông tin, Vithacons sẽ cử kỹ sư đến khảo sát thực tế và tư vấn giải pháp tối ưu nhất cho bạn mà không thu bất kỳ khoản phí nào."
         }
     ];
 
