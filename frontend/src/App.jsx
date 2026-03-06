@@ -111,6 +111,13 @@ function App() {
         </div>
 
         <form onSubmit={handleCalculate} className="space-y-10 sm:space-y-12">
+          {error && (
+            <div className="bg-red-50 text-red-600 p-4 rounded-xl border border-red-200 flex items-center text-sm font-bold mx-2 shadow-sm animate-fade-in-up">
+              <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"></path></svg>
+              {error}
+            </div>
+          )}
+
           {/* Section 1: Inputs */}
           <section ref={areaSectionRef} className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24 sm:scroll-mt-28">
             <h3 className="text-xl sm:text-2xl font-bold mb-6 flex items-center text-gray-800">
@@ -174,13 +181,6 @@ function App() {
               </div>
             )}
           </section>
-
-          {error && (
-            <div className="bg-red-50 text-red-600 p-4 rounded-xl border border-red-200 flex items-center text-sm font-semibold mx-2">
-              <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"></path></svg>
-              {error}
-            </div>
-          )}
 
           <div className="text-center pt-4 sm:pt-8 bg-gray-50 sticky bottom-20 z-40 sm:static pb-4 shadow-top sm:shadow-none">
             <button
