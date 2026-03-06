@@ -7,6 +7,5 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-  ],
-  base: '/bao-gia/', // Absolute proxy path to ensure Vite routes correctly
+  ]
 })
