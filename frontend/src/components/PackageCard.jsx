@@ -23,7 +23,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
             )}
             <div className="p-4 sm:p-6 flex-1 flex flex-col">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2">{pkg.name}</h3>
-                <p className="text-gray-500 text-xs sm:text-sm mb-4 h-10 sm:h-12 leading-relaxed">{pkg.description}</p>
+                <p className="text-gray-500 text-xs sm:text-sm mb-4 leading-relaxed min-h-[3rem]">{pkg.description}</p>
 
                 <div className="mb-4 sm:mb-6 pb-4 border-b border-gray-100">
                     <span className="text-2xl sm:text-3xl font-black text-blue-600">
