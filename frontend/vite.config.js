@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/bao-gia/', // Fixed path to properly align with landing page proxy
+  base: './', // Use relative paths for assets to avoid MIME type errors on rewrites
 })
