@@ -25,7 +25,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
                     code: 'ECO',
                     name: 'Gói Tiết Kiệm (Eco)',
                     base_price: 4500000,
-                    description: 'Vật tư sẽ giảm chất lượng 1 chút để tiết kiệm chi phí tối đa.',
+                    description: 'Tối ưu hóa chủng loại vật tư để đạt hiệu quả kinh tế cao nhất nhưng vẫn đảm bảo độ bền kết cấu.',
                     is_multi_story: 0,
                     image_url: '/images/eco.png',
                     materials: JSON.stringify({
