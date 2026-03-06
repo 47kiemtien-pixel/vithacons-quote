@@ -14,7 +14,7 @@ const QuoteResult = ({ result }) => {
                     {formattedPrice}
                 </div>
                 <div className="text-blue-100 text-sm sm:text-base font-medium">
-                    Cho tổng diện tích {totalArea} m² ({pkg.name})
+                    Tổng diện tích xây dựng {totalArea} m² ({pkg.name})
                 </div>
             </div>
 

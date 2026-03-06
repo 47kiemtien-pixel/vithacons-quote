@@ -111,7 +111,7 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">Dự toán chi phí xây dựng nhanh chóng</h2>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed px-4">Nhập diện tích sàn và chọn gói vật tư để nhận báo giá tức thì.</p>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed px-4">Nhập tổng diện tích xây dựng và chọn gói vật tư để nhận báo giá tức thì.</p>
         </div>
 
         <form onSubmit={handleCalculate} className="space-y-10 sm:space-y-12">
@@ -130,7 +130,7 @@ function App() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">Diện tích sàn xây dựng (m²)</label>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Tổng diện tích xây dựng (m²)</label>
                 <div className="relative">
                   <input
                     type="number"
@@ -140,7 +140,7 @@ function App() {
                       setArea(e.target.value);
                       if (fieldErrors.area) setFieldErrors(prev => ({ ...prev, area: null }));
                     }}
-                    placeholder="Nhập diện tích"
+                    placeholder="Nhập tổng diện tích"
                     className={`w-full pl-4 pr-12 py-4 rounded-xl border-2 outline-none transition-all text-lg font-bold ${fieldErrors.area ? 'border-red-400 bg-red-50 focus:border-red-500' : 'border-gray-100 bg-gray-50 focus:bg-white focus:border-blue-500'}`}
                   />
                   <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 font-bold">m²</div>
