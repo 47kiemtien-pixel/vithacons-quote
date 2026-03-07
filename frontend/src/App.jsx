@@ -3,6 +3,7 @@ import PackageCard from './components/PackageCard';
 import QuoteResult from './components/QuoteResult';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import { fallbackPackages, calculateQuoteLocally } from './data/fallbackData';
 import './index.css';
 
 function App() {
@@ -30,9 +31,15 @@ function App() {
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
     fetch(`${apiUrl}/api/packages`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('Network response was not ok');
+        return res.json();
+      })
       .then(data => setPackages(data))
-      .catch(err => console.error("Error fetching packages:", err));
+      .catch(err => {
+        console.warn("Could not fetch packages from API, using fallback data:", err);
+        setPackages(fallbackPackages);
+      });
   }, []);
 
   const handleCalculate = async (e) => {
@@ -72,20 +79,23 @@ function App() {
         }),
       });
 
-      const data = await res.json();
       if (res.ok) {
+        const data = await res.json();
         setQuoteResult(data);
-        // Scroll to the result
-        setTimeout(() => {
-          resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
       } else {
-        setError(data.error || 'Có lỗi xảy ra khi tính toán dự toán');
+        console.warn("API returned error, using local calculation fallback");
+        const localResult = calculateQuoteLocally(area, selectedPackage, floors);
+        setQuoteResult(localResult);
       }
     } catch (err) {
-      setError('Lỗi kết nối đến máy chủ');
+      console.warn("API quote failed, using local calculation fallback", err);
+      const localResult = calculateQuoteLocally(area, selectedPackage, floors);
+      setQuoteResult(localResult);
     } finally {
       setLoading(false);
+      setTimeout(() => {
+        resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
   };
 
