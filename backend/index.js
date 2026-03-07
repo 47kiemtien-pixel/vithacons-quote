@@ -3,8 +3,17 @@ const cors = require('cors');
 const db = require('./database');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
+
+// Health check route for Railway
+app.get('/', (req, res) => {
+    res.json({ status: 'ok', message: 'Vithacon Quote Backend API is running!' });
+});
 
 // Get all available packages
 app.get('/api/packages', (req, res) => {
